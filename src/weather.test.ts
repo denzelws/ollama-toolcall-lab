@@ -6,6 +6,14 @@ test("returns fake weather for a known city", () => {
   assert.equal(getWeather({ city: "São Paulo" }), "Warm and cloudy, 24°C.");
 });
 
+test("returns fake weather for Rio de Janeiro", () => {
+  assert.equal(getWeather({ city: "rio de janeiro" }), "Hot and sunny, 32°C.");
+});
+
+test("returns fake weather for Rio de Janeiro (mixed case)", () => {
+  assert.equal(getWeather({ city: "Rio de Janeiro" }), "Hot and sunny, 32°C.");
+});
+
 test("rejects an unknown city", () => {
   assert.throws(() => getWeather({ city: "Tokyo" }), /No fake weather/);
 });
